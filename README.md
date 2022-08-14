@@ -1,15 +1,15 @@
 # Leaflet.SimpleCRSMeasurement
 A Leaflet.js plugin to perform measurements when using a simple CRS (coordinate system).
 
-This is a fork of https://github.com/gokertanrisever/leaflet-ruler that I edited to work easily
-when using non-standard maps with `L.CRS.Simple`.
+This is a fork of https://github.com/gokertanrisever/leaflet-ruler that I edited to work easily with `L.CRS.Simple`, when using non-standard maps like drawn maps or game maps.
+
+![screenshot](https://user-images.githubusercontent.com/33519926/184546111-94527649-f8cd-4996-b22d-03c550f77a07.PNG)
 
 ## How to use
 
 Add the dependencies to your map:
 
 ```
-https://cdn.jsdelivr.net/gh/user/repo@version/file
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/conengmo/Leaflet.SimpleCRSMeasurement/leaflet-ruler.css">
 <script src="https://cdn.jsdelivr.net/gh/conengmo/Leaflet.SimpleCRSMeasurement/leaflet-ruler.js"></script>
 ```
@@ -33,7 +33,8 @@ let options: {
         color: 'red',
         dashArray: '1,6'
     },
-    scale: 1.0,                   // scale distances to kilometer (or what you use in the formatter function)
+    // to get a meaningful distance you will have to provide a conversion factor:
+    scale: 1.0,                   
     // custom function to return the distance as a string
     formatter: function(distance) {
         return distance.toFixed(1);            
