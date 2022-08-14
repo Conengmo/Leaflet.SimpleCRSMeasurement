@@ -10,6 +10,9 @@
   }
 }(function (L) {
   "use strict";
+  function _round_distance(num) {
+    return num.toFixed(num < 10 ? 1 : 0);
+  }
   L.Control.Ruler = L.Control.extend({
     options: {
       position: 'topleft',
@@ -23,7 +26,7 @@
       },
       scale: 1,
       formatter: function(distance) {
-        return '<b>Distance:</b>&nbsp;' + distance.toFixed(0) + '&nbsp;km / ' + (distance * 0.6214).toFixed(0) + '&nbsp;mile';
+        return '<b>Distance:</b>&nbsp;' + _round_distance(distance) + '&nbsp;km / ' + _round_distance(distance * 0.6214) + '&nbsp;mile';
       },
     },
     onAdd: function(map) {
